@@ -39,3 +39,75 @@
   font-size: clamp(14px, calc(10.8px + 0.85vw), 23px);
   font-weight: 400;
 }
+
+.main {
+  display: grid;
+  gap: 50px;
+}
+
+.card {
+  border: 2px solid var(--accent);
+  background-color: var(--surface);
+}
+
+.card__title {
+  padding: 4px 10px;
+  font-size: 18px;
+  line-height: 22px;
+  font-variation-settings: 'wght' var(--weight-title);
+}
+
+.card__media {
+  position: relative;
+  isolation: isolate;
+  border-block: 2px solid var(--accent);
+}
+
+.card__image {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.card__content {
+  display: grid;
+  gap: 25px;
+  padding: 25px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.card__actions {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 4px;
+}
+
+.button {
+  min-block-size: 38px;
+  padding: 0 16px;
+  border: 2px solid var(--accent);
+  background-color: var(--surface);
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 0.9;
+  cursor: pointer;
+}
+
+.card__like-button {
+  min-inline-size: 130px;
+}
+
+.card__icon-button {
+  display: grid;
+  place-items: center;
+  inline-size: 39px;
+  block-size: 38px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
