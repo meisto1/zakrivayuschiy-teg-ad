@@ -188,3 +188,23 @@
   inline-size: 100%;
   text-transform: uppercase;
 }
+
+@media (width <= 375px) {
+  .card__label {
+    inset-inline-end: 11px;
+  }
+
+  .save-button {
+    flex-direction: column;
+  }
+
+  .save-button .floppy-icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .save-dialog {
+    inline-size: min(341px, calc(100% - 34px));
+    padding-inline: clamp(23px, calc(23px + (100vw - 320px) * 0.31), 40px);
+  }
+}
