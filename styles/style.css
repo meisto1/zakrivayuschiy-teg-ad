@@ -196,6 +196,10 @@
 }
 
 @media (width <= 375px) {
+  .header__logo {
+    font-size: min(49px, 13.07vw);
+  }
+
   .card__label {
     inset-inline-end: 11px;
   }
