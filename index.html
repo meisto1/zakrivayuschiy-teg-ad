@@ -259,7 +259,7 @@
         </div>
       </article>
       <button class="button save-button" type="button" aria-haspopup="dialog"
-        aria-controls="save-dialog">
+        aria-controls="save-dialog" onclick="document.getElementById('save-dialog').showModal()">
         <svg class="floppy-icon" viewBox="0 0 24 24" aria-hidden="true">
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
@@ -271,11 +271,11 @@
         <use href="./svg/floppy.svg#floppy"></use>
       </svg>
       <p class="save-dialog__title" id="save-dialog-title">Вставьте дискету, чтобы продолжить</p>
-      <button class="button save-dialog__close" type="button" autofocus>
-        <span class="button__text">OK</span>
+      <button class="button save-dialog__close" type="button" aria-controls="save-dialog"
+        onclick="document.getElementById('save-dialog').close()" autofocus>
+        <span class="button__text">ок</span>
       </button>
     </dialog>
-    <script src="./scripts/dialog.js"></script>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
