@@ -4,9 +4,6 @@
   color: var(--accent);
   font-family: var(--font-main);
   font-variation-settings: 'wght' var(--weight-text);
-}
-
-.page {
   padding-block: 100px;
   background-image: var(--page-background);
   background-attachment: fixed;
@@ -186,11 +183,8 @@
   block-size: 39px;
 }
 
-.save-dialog__form {
-  grid-column: 1 / -1;
-}
-
 .save-dialog__close {
+  grid-column: 1 / -1;
   inline-size: 100%;
   text-transform: uppercase;
 }
