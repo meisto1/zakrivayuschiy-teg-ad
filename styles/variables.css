@@ -5,5 +5,9 @@
   --weight-title: 700;
   --surface: #fff;
   --accent: #000;
+  --page-background:
+    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
   --content-width: clamp(375px, 100%, 700px);
 }
