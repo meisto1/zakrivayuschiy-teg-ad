@@ -199,7 +199,26 @@
           </div>
         </div>
       </article>
+      <button class="button save-button" type="button" aria-haspopup="dialog"
+        aria-controls="save-dialog">
+        <svg class="floppy-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <use href="./svg/floppy.svg#floppy"></use>
+        </svg>
+        <span class="button__text">Сохранить на память</span>
+      </button>
     </main>
+    <dialog class="save-dialog" id="save-dialog" aria-labelledby="save-dialog-title">
+      <svg class="floppy-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <use href="./svg/floppy.svg#floppy"></use>
+      </svg>
+      <p class="save-dialog__title" id="save-dialog-title">Вставьте дискету, чтобы продолжить</p>
+      <form class="save-dialog__form" method="dialog">
+        <button class="button save-dialog__close" type="submit" autofocus>
+          <span class="button__text">ОК</span>
+        </button>
+      </form>
+    </dialog>
+    <script src="./scripts/dialog.js"></script>
     <script src="./scripts/like.js"></script>
   </body>
 </html>

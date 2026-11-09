@@ -134,3 +134,57 @@
     text-shadow: none;
   }
 }
+
+.save-button {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 19px;
+}
+
+.floppy-icon {
+  flex: none;
+  inline-size: 21px;
+  block-size: 21px;
+}
+
+.save-dialog {
+  display: none;
+  grid-template-columns: 39px 1fr;
+  align-items: center;
+  gap: 30px 20px;
+  inline-size: min(353px, calc(100% - 24px));
+  max-inline-size: none;
+  padding: 30px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background-color: var(--surface);
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.save-dialog[open] {
+  display: grid;
+}
+
+.save-dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.save-dialog .floppy-icon {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.save-dialog__form {
+  grid-column: 1 / -1;
+}
+
+.save-dialog__close {
+  inline-size: 100%;
+  text-transform: uppercase;
+}
