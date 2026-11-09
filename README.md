@@ -12,8 +12,8 @@ python3 -m http.server 8000 --bind 127.0.0.1
 
 Откройте [локальную страницу](http://127.0.0.1:8000/).
 
-## Публикация
+## Опубликованный сайт
 
-После отправки ветки `main` в репозиторий GitHub выберите **Settings → Pages → Deploy from a branch**, затем **main / (root)**. Добавьте сюда ссылку из настроек Pages, когда сайт будет опубликован.
+[Открыть проект на GitHub Pages](https://meisto1.github.io/zakrivayuschiy-teg-ad/)
 
 [Макет Figma](https://www.figma.com/design/Yg5IFeWSyl6Js98kWROjVP/4?node-id=0-1)
