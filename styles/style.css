@@ -60,6 +60,7 @@
 .card__media {
   position: relative;
   isolation: isolate;
+  overflow: hidden;
   border-block: 2px solid var(--accent);
 }
 
@@ -207,4 +208,32 @@
     inline-size: min(341px, calc(100% - 34px));
     padding-inline: clamp(23px, calc(23px + (100vw - 320px) * 0.31), 40px);
   }
+}
+
+.card__image--blank {
+  filter: grayscale(0.75);
+}
+
+.card__image--doubt {
+  filter: saturate(2.5);
+}
+
+.card__image--perfect {
+  filter: hue-rotate(16deg);
+}
+
+.card__image--together {
+  filter: brightness(1.18) contrast(0.85);
+}
+
+.card__image--routes {
+  filter: sepia(0.85);
+}
+
+.card__image--pause {
+  filter: blur(2px);
+}
+
+.card__image--next {
+  filter: contrast(1.14) saturate(1.2);
 }
