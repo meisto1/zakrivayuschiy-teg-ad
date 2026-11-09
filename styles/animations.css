@@ -1,3 +1,88 @@
 .sparks {
   opacity: 0;
 }
+
+.heart {
+  transform-origin: center;
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .core,
+.card__icon-button:active .core,
+.like-icon.is-liked .core {
+  transition-delay: 0s;
+}
+
+.like-icon:hover .main-body,
+.card__icon-button:active .main-body,
+.like-icon.is-liked .main-body {
+  transition-delay: 0.05s;
+}
+
+.like-icon:hover .core,
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+}
+
+.card__icon-button:active .core,
+.card__icon-button:active .main-body,
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-beat 0.3s ease-in 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-flash 0.3s ease-in 0.3s;
+}
+
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes sparks-flash {
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .button::before,
+  .card__icon-button,
+  .like-icon .contour,
+  .like-icon .core,
+  .like-icon .main-body {
+    transition: none;
+  }
+
+  .like-icon.is-liked .heart,
+  .like-icon.is-liked .sparks {
+    animation: none;
+  }
+}
