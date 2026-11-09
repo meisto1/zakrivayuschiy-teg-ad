@@ -88,6 +88,9 @@
 }
 
 .button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-block-size: 38px;
   padding: 0 16px;
   border: 2px solid var(--accent);
@@ -96,6 +99,7 @@
   font-size: 14px;
   line-height: 0.9;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
 
 .card__like-button {
@@ -105,12 +109,13 @@
 .card__icon-button {
   display: grid;
   place-items: center;
-  inline-size: 39px;
+  inline-size: 43px;
   block-size: 38px;
   padding: 0;
-  border: 0;
+  border: 2px solid transparent;
   background: transparent;
   cursor: pointer;
+  transition: border-color 0.3s ease;
 }
 
 .card__label {
@@ -236,4 +241,37 @@
 
 .card__image--next {
   filter: contrast(1.14) saturate(1.2);
+}
+
+.button:focus,
+.card__icon-button:focus {
+  outline: none;
+}
+
+.button:focus {
+  box-shadow: 2px 2px 0 var(--accent);
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  transform: translateX(0);
+}
+
+.button__text,
+.button .floppy-icon {
+  position: relative;
+  color: var(--button-text);
+  mix-blend-mode: difference;
 }
