@@ -16,7 +16,20 @@ jobs:
       - name: Check if the repository is private
         run: exit 1
         if: ${{github.event.repository.private}}
+      - name: Prepare official test environment
+        run: |
+          checker="$RUNNER_TEMP/closing-tag-checker"
+          mkdir -p "$checker"
+          docker pull practicumweb/gha-verstka-checker:main
+          docker run --rm -v "$checker:/output" practicumweb/gha-verstka-checker:main \
+            bash -c 'cp -a /project/. /output/'
+          sudo mkdir -p "$checker/code"
+          sudo cp -a "$GITHUB_WORKSPACE/." "$checker/code/"
+          docker run --rm -v "$checker:/project" practicumweb/gha-verstka-checker:main \
+            make setup PROJECT_NAME=zakrivayuschiy-teg-ad
       - name: Tests
-        uses: Yandex-Practicum/test-project-action@v1
-        with:
-          project: 'zakrivayuschiy-teg-ad'
+        run: |
+          docker run --rm \
+            -v "$RUNNER_TEMP/closing-tag-checker:/project" \
+            -e NODE_OPTIONS=--require=/project/code/.github/scripts/puppeteer-xpath.cjs \
+            practicumweb/gha-verstka-checker:main make test
