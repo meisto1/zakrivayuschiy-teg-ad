@@ -111,3 +111,26 @@
   background: transparent;
   cursor: pointer;
 }
+
+.card__label {
+  position: absolute;
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 1;
+  text-shadow:
+    -1px 0 var(--label-stroke),
+    0 1px var(--label-stroke),
+    1px 0 var(--label-stroke),
+    0 -1px var(--label-stroke);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+}
+
+@supports (-webkit-text-stroke: 1px #fff) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--label-stroke);
+    text-shadow: none;
+  }
+}
